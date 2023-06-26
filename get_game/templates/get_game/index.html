@@ -1,5 +1,19 @@
 {% extends "get_game/base_homepage.html" %}
 
 {% block content %}
-  <h1>Testing Modifying base template</h1>
+  <h1>Welcome to the Random Steam Game Discoverer!</h1>
+                <p>Explore random games from your Steam Library</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="input-group">
+                                <label>
+                                    <input type="number" class="form-control" placeholder="Enter your Steam Profile Id" required>
+                                </label>
+                                <button type="submit" class="btn btn-primary" name="profile_submit">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 {% endblock %}

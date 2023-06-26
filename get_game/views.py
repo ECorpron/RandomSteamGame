@@ -4,6 +4,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
+    if request.method == "POST":
+        data = request.POST
+        profile_id = data.get("profile_submit")
     return render(request, 'get_game/index.html')
 
 
