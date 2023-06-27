@@ -1,0 +1,14 @@
+{% extends "get_game/base_homepage.html" %}
+
+{% block content %}
+    <h1>Welcome to RandomSteamGame!</h1>
+    <p>Explore random games from your Steam library!</p>
+    <p>Your profile ID in the session data is {{  request.session.profile_id  }}</p>
+    <form action="{% url 'random_game' %}" method="GET">
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6 col-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Find a Game to Play!</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

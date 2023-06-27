@@ -1,0 +1,21 @@
+{% extends "get_game/base_homepage.html" %}
+
+{% block content %}
+    <h1>Your Game to play is {{ request.session.game_name }}</h1>
+
+    <form action="{% url 'random_game' %}" method="GET">
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6 col-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Spin Again!</button>
+            </div>
+        </div>
+    </form>
+
+    <form action="{% url 'index' %}" method="GET">
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6 col-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Enter New Profile ID</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
